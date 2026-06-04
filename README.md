@@ -6,16 +6,27 @@ ThumbScreen is a tiny macOS menu bar app that mirrors your primary display in re
 
 ---
 
-## How it looks
+## Download
 
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  [your whole screen, live, at 10fps, in 30 pixels of height]        │
-└──────────────────────────────────────────────────────────────────────┘
-       ↑ Touch Bar (2170 × 60 px physical)
-```
+Head to the [**Releases page**](https://github.com/mamugg/ThumbScreen/releases/latest), grab `ThumbScreen-v1.0.zip`, unzip it, and drag **ThumbScreen.app** into your `/Applications` folder.
 
-Yes, it's absurdly wide and comically short. That's the point.
+---
+
+## First launch — important
+
+Because ThumbScreen is not notarized by Apple, macOS will block it on the first open. **Do not double-click.** Instead:
+
+1. **Right-click** `ThumbScreen.app` in Finder
+2. Select **Open**
+3. Click **Open** again in the security dialog
+
+You only need to do this once. After that, the app opens normally.
+
+Then, when prompted, grant **Screen Recording** permission:
+
+**System Settings → Privacy & Security → Screen Recording → enable ThumbScreen**
+
+If the permission prompt never appeared, click the menu bar icon and choose **Allow Screen Recording…**
 
 ---
 
@@ -36,14 +47,13 @@ Yes, it's absurdly wide and comically short. That's the point.
 | **macOS** | 13 Ventura or later |
 | **Hardware** | MacBook Pro with a physical Touch Bar (2016–2021) |
 | **Permission** | Screen Recording (prompted on first launch) |
-| **Xcode** | 15+ to build |
 
 ---
 
-## Build & Run
+## Build from source
 
 ```bash
-git clone https://github.com/mamuggeo/ThumbScreen.git
+git clone https://github.com/mamugg/ThumbScreen.git
 cd ThumbScreen
 open ThumbScreen.xcodeproj
 ```
@@ -55,19 +65,9 @@ open ThumbScreen.xcodeproj
 
 ---
 
-## First launch
-
-On first run, macOS will prompt for **Screen Recording** access. Grant it in:
-
-**System Settings → Privacy & Security → Screen Recording**
-
-If the dialog never appeared, click the menu bar icon (look for `⧉`) and choose **"Autoriser la capture d'écran…"**.
-
----
-
 ## Settings
 
-Click the menu bar icon → **Paramètres…** (`⌘,`)
+Click the menu bar icon → **Settings…** (`⌘,`)
 
 | Setting | What it does |
 |---|---|
@@ -95,12 +95,6 @@ Click the menu bar icon → **Paramètres…** (`⌘,`)
 - **Private APIs** — uses `DFRFoundation`, an undocumented Apple framework. May break on future macOS releases.
 - **Not App Store compatible** — sandbox disabled, private framework usage.
 - **Aspect ratio** — the screen (~16:10) is squished into a ~36:1 strip. Things will look… flat.
-
----
-
-## Why
-
-Because why not. It's fun, it's weird, and it actually works.
 
 ---
 
